@@ -1,55 +1,113 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #87CEFA;
+/*Обнулення стилів для більшості основних тегів*/
+*, *::before, *::after {
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    border: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a, a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+
+img {
+    vertical-align: top;
+}
+
+html, body {
+    height: 100%;
+}
+
+html {
+    font-size: 14px;
+}
+
+button, input, textarea, select, a {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    line-height: inherit;
+    background-color: inherit;
+}
+
+body {
+    line-height: 1;
+}
+
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+}
+
+/*Основні стилі*/
+
+/*Переприсвоєння сімейства шрифтів для всіх тегів проекту*/
+body {
+    font-family: Roboto, sans-serif;
 }
 
 .container {
-    background-color: white;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    width: 300px;
+    margin: 0 auto;
+    max-width: 600px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+}
+
+.form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form__container {
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
-    text-align: center;
+    font-weight: 700;
+    font-size: 24px;
     margin-bottom: 20px;
-}
-
-.form-group,
-.list-group,
-.buttons {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-input {
-    width: calc(100% - 80px);
-    padding: 5px;
-    margin-right: 10px;
 }
 
 button {
     padding: 5px 10px;
-    border: none;
-    background-color: #007BFF;
+    font-weight: 700;
     color: white;
-    border-radius: 4px;
+    background-color: #2e93ef;
+    border: 1px solid #1877F2;
+    border-radius: 10px;
     cursor: pointer;
 }
 
 button:hover {
     background-color: #0056b3;
+}
+
+.list {
+    display: flex;
+}
+
+.list__controls {
+    display: flex;
+    flex-direction: column;
+
 }
 
 select {

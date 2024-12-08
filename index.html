@@ -6,36 +6,56 @@
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>JS PROJECT</title>
-    <!--Додаю файли для загальних стилів та адаптивності-->
+    <!--Підключення зовнішнього файлу для стилів та окремий для адаптивності-->
     <link href="style.css" rel="stylesheet">
     <link href="responsive.css" rel="stylesheet">
+    <!--Підключення шрифту з google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto: regular" rel="stylesheet"/>
+    <!--Додав фавікони різних розмірів для коректного відображення на різних пристроях-->
+    <link href="./img/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
+    <link href="./img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+    <link href="./img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
 </head>
 <body>
 
+<!--Створив гнучку html структуру з використанням методології BEM. Надав унікальним елементам ідентифікатори.
+ Це дозволить зручно доступатись до всіх елементів і розширювати проект в майбутньому-->
+
+<!--Глобальний контейнер-->
 <div class="container">
-    <h1>Test</h1>
 
-    <div class="form">
-        <label for="formInput">Name/Value Pair</label>
-        <input id="formInput" placeholder="Name/Value" type="text">
-        <button id="addItem">Add</button>
-    </div>
+    <!--Заголовок блоку-->
+    <h1 class="container__title">Test</h1>
 
-    <div class="list">
-        <label for="pairList">Name/Value Pair List</label>
-        <select id="pairList" multiple></select>
-    </div>
+    <!--Контент блоку. Для кращої оптимізації і читабельності розділив код на 2 частини і застосував такі теги як form та section-->
 
-    <div class="buttons">
-        <button id="sortByName">Sort by Name</button>
-        <button id="sortByValue">Sort by Value</button>
-        <button id="delete">Delete</button>
-    </div>
+    <!--Поле для введення пари Name/Value з плейсхолдером, який підказує формат даних інпута + кнопка для додавання введених даних до списку-->
+    <form class="form" id="f1">
+        <div class="form__container">
+            <label class="form__label" for="formInput">Name/Value Pair</label>
+            <input class="form__input" id="formInput" placeholder="Name=Value" type="text">
+        </div>
+        <button class="form__button" id="addItem">Add</button>
+    </form>
 
-    <script src="./script.js"></script>
-
+    <!--Секція зі списком для відображення введених пар Name/Value-->
+    <section class="list">
+        <div class="list__container">
+            <label class="list__label" for="pairList">Name/Value Pair List</label>
+            <select class="list__select" id="pairList" multiple></select>
+        </div>
+        <!--Окремий блок з кнопками для керування списком-->
+        <div class="list__controls">
+            <button class="list__button list__button--sort-name" id="sortByName">Sort by Name</button>
+            <button class="list__button list__button--sort-value" id="sortByValue">Sort by Value</button>
+            <button class="list__button list__button--delete" id="delete">Delete</button>
+        </div>
+    </section>
 </div>
 
+
+<!--Підключення зовнішнього файлу скриптів-->
+<script src="./script.js"></script>
 
 </body>
 </html>
