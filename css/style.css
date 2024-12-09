@@ -66,8 +66,7 @@ body {
     background-color: #fff;
     padding: 30px;
     margin: 0 auto;
-    min-width: 500px;
-    max-width: 700px;
+    width: 600px;
     border: 1px solid gray;
     border-radius: 10px;
     display: flex;
@@ -147,37 +146,4 @@ button:hover {
 
 .list__button--delete:hover {
     background-color: #b52a2a;
-}
-
-
-/* Адаптивність */
-@media (max-width: 768px) {
-    body {
-        font-size: 12px;
-    }
-
-;
-    .container {
-        min-width: 300px;
-        max-width: 500px;
-        margin: 10px;
-    }
-
-    .form__container {
-        flex-direction: column;
-    }
-
-    .form__input {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .list__container {
-        flex-direction: column;
-    }
-
-    .list__select {
-        width: 100%;
-        margin-bottom: 10px;
-    }
 }
