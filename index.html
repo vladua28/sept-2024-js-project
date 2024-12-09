@@ -6,15 +6,11 @@
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <title>JS PROJECT</title>
-    <!--Підключення зовнішнього файлу для стилів та окремий для адаптивності-->
+    <!--Підключаю зовнішні файли для загальних стилів та для адаптивності-->
     <link href="style.css" rel="stylesheet">
     <link href="responsive.css" rel="stylesheet">
-    <!--Підключення шрифту з google fonts-->
+    <!--Підключаю шрифт з google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Roboto: regular" rel="stylesheet"/>
-    <!--Додав фавікони різних розмірів для коректного відображення на різних пристроях-->
-    <link href="./img/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
-    <link href="./img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
-    <link href="./img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
 </head>
 <body>
 
@@ -31,30 +27,30 @@
 
     <!--Поле для введення пари Name/Value з плейсхолдером, який підказує формат даних інпута + кнопка для додавання введених даних до списку-->
     <form class="form" id="f1">
+        <label class="form__label" for="formInput">Name/Value Pair</label>
         <div class="form__container">
-            <label class="form__label" for="formInput">Name/Value Pair</label>
             <input class="form__input" id="formInput" placeholder="Name=Value" type="text">
+            <button class="form__button" id="addItem">Add</button>
         </div>
-        <button class="form__button" id="addItem">Add</button>
     </form>
 
     <!--Секція зі списком для відображення введених пар Name/Value-->
     <section class="list">
+        <label class="list__label" for="pairList">Name/Value Pair List</label>
         <div class="list__container">
-            <label class="list__label" for="pairList">Name/Value Pair List</label>
             <select class="list__select" id="pairList" multiple></select>
-        </div>
-        <!--Окремий блок з кнопками для керування списком-->
-        <div class="list__controls">
-            <button class="list__button list__button--sort-name" id="sortByName">Sort by Name</button>
-            <button class="list__button list__button--sort-value" id="sortByValue">Sort by Value</button>
-            <button class="list__button list__button--delete" id="delete">Delete</button>
+            <!--Окремий блок з кнопками для керування списком-->
+            <div class="list__controls">
+                <button class="list__button list__button--sort-name" id="sortByName">Sort by Name</button>
+                <button class="list__button list__button--sort-value" id="sortByValue">Sort by Value</button>
+                <button class="list__button list__button--delete" id="delete">Delete</button>
+            </div>
         </div>
     </section>
 </div>
 
 
-<!--Підключення зовнішнього файлу скриптів-->
+<!--Підключаю зовнішній файл скриптів-->
 <script src="./script.js"></script>
 
 </body>

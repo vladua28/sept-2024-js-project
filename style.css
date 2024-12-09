@@ -1,4 +1,4 @@
-/*Обнулення стилів для більшості основних тегів*/
+/*Обнулення стилів для більшості основних тегів. Це дозволить уникнути дефолтних стилів при розширенні проекту*/
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -41,53 +41,55 @@ button, input, textarea, select, a {
     color: inherit;
     line-height: inherit;
     background-color: inherit;
+    overflow: auto;
 }
 
 body {
     line-height: 1;
+
 }
 
-.wrapper {
-    min-height: 100%;
-    overflow: hidden;
-}
-
-/*Основні стилі*/
-
-/*Переприсвоєння сімейства шрифтів для всіх тегів проекту*/
+/* Стилі основних контейнерів*/
 body {
-    font-family: Roboto, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*height: 100vh; */
+
+
 }
 
 .container {
-    padding: 20px;
+    background-color: #fff;
+    padding: 30px;
     margin: 0 auto;
-    max-width: 600px;
+    min-width: 500px;
+    max-width: 700px;
     border: 1px solid gray;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    /*align-items: center;*/
 }
 
-.form {
-    display: flex;
-    justify-content: space-between;
-}
-
-.form__container {
-    display: flex;
-    flex-direction: column;
-}
-
+/*Спільні стилі для елементів різних блоків*/
 h1 {
     font-weight: 700;
     font-size: 24px;
     margin-bottom: 20px;
 }
 
+label {
+    font-weight: 700;
+    margin-bottom: 5px;
+    display: block;
+}
+
 button {
-    padding: 5px 10px;
+    padding: 5px 20px;
+    min-width: 150px;
     font-weight: 700;
     color: white;
     background-color: #2e93ef;
@@ -97,23 +99,85 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #1877F2;
 }
 
-.list {
+/* Стилі форми */
+.form {
+    margin-bottom: 20px;
+}
+
+.form__container {
     display: flex;
+    justify-content: space-between;
+}
+
+.form__input {
+    width: 60%;
+    padding: 5px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+
+/* Стилі списку */
+.list__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.list__select {
+    width: 60%;
+    height: 120px;
+    padding: 5px;
+    border: 1px solid lightgray;
+    border-radius: 4px;
 }
 
 .list__controls {
     display: flex;
     flex-direction: column;
-
+    gap: 10px;
 }
 
-select {
-    width: 100%;
-    height: 100px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.list__button--delete {
+    background-color: #d9534f;
+    border: 1px solid #b52a2a;
+}
+
+.list__button--delete:hover {
+    background-color: #b52a2a;
+}
+
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    body {
+        font-size: 12px;
+    }
+
+;
+    .container {
+        min-width: 300px;
+        max-width: 500px;
+        margin: 10px;
+    }
+
+    .form__container {
+        flex-direction: column;
+    }
+
+    .form__input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .list__container {
+        flex-direction: column;
+    }
+
+    .list__select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }
