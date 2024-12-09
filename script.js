@@ -69,6 +69,7 @@ addItemButton.addEventListener('click', (ev) => {
  оновлює UI і відображає новий список після сортування*/
 sortByNameButton.addEventListener('click', () => {
     pairs.sort((a, b) => a.name.localeCompare(b.name));
+    updateList();
 });
 
 /*Все теж саме, але порівнюються властивості value*/
